@@ -1,0 +1,37 @@
+services:
+  web1:
+    image: nginx:stable
+    container_name: web1
+    ports:
+      - "8091:80"
+    volumes:
+       - ./web1:/usr/share/nginx/html:ro
+    networks:
+      - lb_net
+
+  web2:
+    image: nginx:stable
+    container_name: web2
+    ports:
+      - "8092:80"
+    volumes:
+      - ./web2:/usr/share/nginx/html:ro
+    networks:
+      - lb_net
+
+  loadbalancer:
+    image: nginx:stable
+    container_name: wp_loadbalancer
+    depends_on:
+      - web1
+      - web2
+    ports:
+      - "8090:80"
+    volumes:
+      - ./nginx-lb/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./logs:/var/log/nginx
+    networks:
+      - lb_net
+
+networks:
+  lb_net:

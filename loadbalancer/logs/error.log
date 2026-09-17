@@ -1,0 +1,7 @@
+2026/09/10 08:26:10 [notice] 1#1: using the "epoll" event method
+2026/09/10 08:26:10 [notice] 1#1: nginx/1.30.4
+2026/09/10 08:26:10 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) 
+2026/09/10 08:26:10 [notice] 1#1: OS: Linux 6.8.0-124-generic
+2026/09/10 08:26:10 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:524288
+2026/09/10 08:26:10 [notice] 1#1: start worker processes
+2026/09/10 08:26:10 [notice] 1#1: start worker process 21
